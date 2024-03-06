@@ -20,10 +20,15 @@ def create_workout():
     exercise_name = input("Enter exercise name (or 'q' to quit): ")
     if exercise_name.lower() == 'q':
       break
+    # Нэр орууласны дараа цаашлах
+    if not exercise_name:
+      print("Please enter a name for the exercise")
+      continue
     sets = int(input("Enter number of sets: "))
     reps = int(input("Enter number of repetitions: "))
     exercises.append(Exercise(exercise_name, sets, reps))
   return exercises
+
 
 def main():
   """
